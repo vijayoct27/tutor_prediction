@@ -21,7 +21,8 @@ def main():
 	else:
 		schedule_input = st.number_input("How many hours per week are you available to teach?", min_value=1, max_value=168, step=1, value=5)
 		subjects_input = st.multiselect("What subjects do you teach?", ['Algebra', 'PSAT', 'Physics', 'Computer Science'])
-		edu_input = st.text_input("List all of your educational qualifications/degrees")
+		edu_input = st.text_area("List all your educational degrees and pedigree, separated by a comma.")
+		number_degrees = edu_input.count(',') + 1
 
 		st.markdown("Give me insights on:")
 
