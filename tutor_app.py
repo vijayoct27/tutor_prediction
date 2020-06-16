@@ -11,11 +11,11 @@ from sklearn.pipeline import Pipeline
 
 import re
 import nltk
+nltk.download('stopwords')
+nltk.download('wordnet') 
 
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
-nltk.download('stopwords')
-nltk.download('wordnet') 
 
 from nltk.stem.porter import PorterStemmer
 from nltk.tokenize import RegexpTokenizer
