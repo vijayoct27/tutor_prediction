@@ -11,8 +11,8 @@ from sklearn.pipeline import Pipeline
 
 import re
 import nltk
-nltk.download('stopwords')
-nltk.download('wordnet') 
+#nltk.download('stopwords')
+#nltk.download('wordnet') 
 
 from nltk.corpus import stopwords
 stop_words = set(stopwords.words('english'))
