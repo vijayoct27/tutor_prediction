@@ -8,6 +8,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 from sklearn.pipeline import Pipeline
+from sklearn.ensemble import RandomForestClassifier
 
 import re
 import nltk
@@ -66,7 +67,7 @@ def main():
 
 	# Title
 	st.title("TutorEdge")
-	st.subheader("So you you want to start tutoring online - that's great! TutorEdge helps you optimize your platform by giving you have insights into how much to charge for your services and how much demand you can expect on average.")
+	st.subheader("So you you want to start tutoring online - that's great! \n TutorEdge helps you optimize your profile, giving you actionable insights into how much to charge for your services and how much demand you can expect.")
 	# Enter information
 
 	desc_input = st.text_input("Summarize your profile in one sentence")
@@ -136,16 +137,24 @@ def main():
 			weights_rate = (1. / np.linalg.norm(input_rate - rate_trans, axis=-1))
 
 			if st.button("Estimate your Rate!"):
-				rate_gkde = stats.gaussian_kde(rate_data.rate, bw_method = 0.5, weights=weights_rate)
+				st.success('Here we show the distribution of rates for profiles already on Wyzant. \n While the full distribution is shown in red, you can get a more personalized idea of what to charge by looking at the weighted distribution in blue, which predominantly accounts for those most similar to you.')
+				rate_gkde = stats.gaussian_kde(rate_data.rate, bw_method = 0.5, weights=weights_rate**4)
+				rate_gkde_none = stats.gaussian_kde(rate_data.rate, bw_method = 0.5, weights=None)
+
 				rate_ind = np.linspace(20, 200, 101)
 				rate_kdepdf = rate_gkde.evaluate(rate_ind)
+				rate_kdepdf_none = rate_gkde_none.evaluate(rate_ind)
+
 				
-				plt.plot(rate_ind, rate_kdepdf, label='kde_weights', color="b")
+				plt.plot(rate_ind, rate_kdepdf, label='weighed', color="b")
+				plt.plot(rate_ind, rate_kdepdf_none, label='unweighted', color="r")
 				plt.title('Kernel Density Estimation')
 				plt.ylabel('pdf')
+				plt.legend()
 				plt.xlabel('Rate ($/Hour)')
 
 				st.pyplot()
+
 				#st.success('Summary of your results')
 
 
@@ -153,29 +162,20 @@ def main():
 		if st.checkbox("Demand"):
 			st.markdown('We just need your rate. If you would like more information on this, check the Rate option above.')
 			rate_input = st.number_input("How much would you like to charge ($/hour)", min_value=1.0, max_value=500.0, step = 1.0, value=50.0)
-			demand_data = pd.read_csv('tutor_data_demand.csv').drop(columns='Unnamed: 0')
-			demand_data_f = demand_data.drop(columns=['hours_per_week_estimate'])
-			demand_pipe = Pipeline([
-				('scaler', StandardScaler()),
-				('reduce_dim', PCA(n_components=3))
-				])
-			demand_pipe.fit(demand_data_f)
-			demand_trans = demand_pipe.transform(demand_data_f)
-			demand_data_test = [schedule_input, bio_count, rate_input, number_subjects, welcoming_count, desc_count, num_popular_subjects, experience_count, postgrad_count]
-			input_demand = demand_pipe.transform(np.array(demand_data_test).reshape(1,-1))
-			weights_demand = (1. / np.linalg.norm(input_demand - demand_trans, axis=-1))
-
 			if st.button("Estimate your Demand!"):
-				demand_gkde = stats.gaussian_kde(demand_data.hours_per_week_estimate, bw_method = 0.5, weights=weights_demand)
-				demand_ind = np.linspace(0, 20, 101)
-				demand_kdepdf = demand_gkde.evaluate(demand_ind)
-
-				plt.plot(demand_ind, demand_kdepdf, label='kde_weights', color="b")
-				plt.title('Kernel Density Estimation')
-				plt.xlabel('Hours per week estimate')
-				plt.ylabel('pdf')
-
-				st.pyplot()
+			
+				demand_data = pd.read_csv('tutor_data_demand.csv').drop(columns=['Unnamed: 0'])
+				X = demand_data.drop(columns=['hours_per_week_estimate' , 'Label'])
+				y = demand_data.Label
+				rf = RandomForestClassifier(n_estimators=100, min_samples_leaf = 5, criterion='entropy', random_state=0)
+				rf.fit(X, y)
+				
+				demand_data_test = [number_subjects, schedule_input, rate_input, bio_count, num_popular_subjects, number_degrees, desc_count, welcoming_count, passion_count, experience_count]
+				prediction = list(rf.predict(np.array(demand_data_test).reshape(1,-1)))[0]
+				if prediction == 'Low':
+					st.success('It looks like your demand will be on the low end, < 1.5 hours/week')
+				elif prediction == 'High':
+					st.success('It looks like your demand will be on the high side, > 1.5 hours/week')
 				#st.success('Summary of your results')
 
 
