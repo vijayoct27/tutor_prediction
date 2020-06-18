@@ -1,3 +1,6 @@
+###This file contains the necessary stored lists to generate predictions on new tutor input informations. 
+# See tutor_demand, tutor_rate, and tutor_nlp for generating functions
+
 experience_list = ['experience teaching tutoring', 'experience tutoring student', 'experience working student', 
                    'many student', 'many year', 
                    'year experience teaching', 'year experience tutoring',

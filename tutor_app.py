@@ -1,5 +1,6 @@
 
-# import packages
+
+# import necessary packages
 import streamlit as st 
 import os
 
@@ -12,6 +13,7 @@ from sklearn.ensemble import RandomForestClassifier
 
 import re
 import nltk
+### only download packages from nltk for first run
 #nltk.download('stopwords')
 #nltk.download('wordnet') 
 
@@ -27,6 +29,7 @@ from sklearn.pipeline import make_pipeline
 from sklearn.neighbors import KernelDensity
 from sklearn.decomposition import PCA
 
+### import lists from stored_lists.py
 from stored_lists import experience_list, welcoming_list, passion_list, popular_subjects, full_subjects_list, undergrad, postgrad, certified, list_of_top_schools
 
 def lemmatize(bio):
@@ -63,7 +66,9 @@ def lemmatize(bio):
     return text
 
 def main():
-	"""Tutor Edge, made with Streamlit """
+	"""
+	This is the script to generate TutorEdge, a webapp built with Streamlit 
+	"""
 
 	# Title
 	st.title("TutorEdge")
