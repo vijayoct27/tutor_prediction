@@ -16,6 +16,6 @@ The goal of [TutorEdge](http://100.25.190.187:8501/) is to provide new tutors in
 
 ### Front-end
 The script to generate the front-end for the webapp on Streamlit is contained in `tutor_app.py`. 
-Use ``` bash
-streamlit run tutor_app.py ``` 
-to launch the app locally. 
+Use ```bash
+bash ./run.sh
+```
