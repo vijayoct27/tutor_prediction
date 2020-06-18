@@ -19,3 +19,4 @@ The US tutoring/test prep industry is ~ $5 billion and rapidly growing with the 
 ```bash
 streamlit run tutor_app.py
 ```
+See [Requirements](https://github.com/vijayoct27/tutor_prediction/blob/master/requirements.txt) for necessary packages to install. 
