@@ -8,6 +8,7 @@ The US tutoring/test prep industry is ~ $5 billion and rapidly growing with the 
 
 ### Approach
 [tutor_cleaning](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_cleaning.ipynb) I scrape and clean ~10k tutor profiles from Wyzant.
+
 [tutor_nlp](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_nlp.ipynb) I engineer features based on keywords extraction from tutor bios with tf-idf.
 
 [tutor_rate](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_rate.ipynb) I prototype the model pipelines for generating a weighted kernel density distribution of rate and in [tutor_demand](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_demand.ipynb) I prototype the model pipeline for classifying tutor demand. 
