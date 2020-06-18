@@ -1,7 +1,7 @@
 ## TutorEdge, a ML-powered tool to optimize your nascent tutoring business
 
 ### Introduction
-The US tutoring industry is ~ $5 billion and rapidly growing with the rise of online tutoring. Many tutors from diverse backgrounds are starting their own online tutoring businesses on platforms such as [Wyzant](https://www.wyzant.com/). However such sites offer minimal guidance to tutors in deciding how to set their rate and, given that rate, how much demand they might expect on the platforms.
+The US tutoring industry is ~ $5 billion and rapidly growing with the rise of online tutoring. Many from diverse backgrounds are starting their own online tutoring businesses on platforms such as [Wyzant](https://www.wyzant.com/). However such sites offer minimal guidance in how to set your rate and, given that, how much demand you might expect on their platforms.
 
 ### Overview
 [TutorEdge](http://100.25.190.187:8501/) provies new tutors insight in how much they can charge for their services. User inputs information found in a typical profile (short description, lengthy bio, schedule availability, educational qualifications, and subjects to teach). The app then generates a kernel density distribution (i.e. a smoothed histogram) for the rates of all tutors in the database, weighted by their similarity to the input. The user can then input their chosen rate to predict their expected demand on Wyzant's platfrom: the app returns a binary response of either low (<1.5 hours/week) or high demand (> 1.5 hours/week).
