@@ -4,4 +4,8 @@ The US tutoring/test prep industry is ~ $5 billion and rapidly growing with the 
 
 [TutorEdge](http://100.25.190.187:8501/) is a webapp built in Streamlit (deployed on AWS), developed during my time in the Insight Data Science, NY fellowship. The primary goal of TutorEdge is to provide new tutors insight in how much they can charge for their services. The user inputs information that would be found in a typical profile such as a short description, a more lengthy bio, their schedule availability, educational qualifications, and subjects they would like to teach. The app then generates a kernel density distribution (i.e. a smoothed histogram) for the rates of all tutors in the database, but weighted by their similarity to the input. Basically, TutorEdge returns a personalized recommendation to a user for how much tutors similar to them are charging, and does so in the form of a distribution. This way, the user gets a better sense of how much they can charge. Next, the user may then use their chosen rate as input in order to gauge their expected demand on Wyzant's platfrom: the app returns a simple binary response of either low demand (<1.5 hours/week) or high demand (> 1.5 hours/week).
 
-First in [tutor_cleaning](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_cleaning.ipynb) we use BeautifulSoup to scrape and clean ~10k tutor profiles from Wyzant. 
+First in [tutor_cleaning](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_cleaning.ipynb) I use BeautifulSoup to scrape and clean ~10k tutor profiles from Wyzant. 
+
+Then in [tutor_nlp](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_nlp.ipynb) I engineered features based on keywords extraction with tf-idf. I only used those keywords that do not overlap with the information contained in the subjects and educational qualifications features.
+
+The features are categorical binary 
