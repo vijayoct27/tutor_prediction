@@ -15,7 +15,7 @@ The US tutoring/test prep industry is ~ $5 billion and rapidly growing with the 
 [tutor_prediction](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_prediction.ipynb) I build the pipeline for using these models on new test cases. 
 
 ### Front-end
-The script to generate the front-end for the webapp on Streamlit is contained in `tutor_app.py`. 
+`tutor_app.py` contains the data preprocessing and front-end response for the webapp, see `requirements.txt`. This can be locally run as:
 ```bash
 streamlit run tutor_app.py
 ```
