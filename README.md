@@ -1,4 +1,12 @@
-## TutorEdge, a ML-powered tool to optimize your nascent tutoring business
+# TutorEdge, a ML-powered tool to optimize your nascent tutoring business
+
+## Table of Contents
+
+1. [Introduction](#Introduction)
+2. [Overview](#Overview)
+3. [Approach](#Approach)
+4. [Setup](#Setup)
+
 
 ### Introduction
 The US tutoring industry is ~ $5 billion and rapidly growing with the rise of online tutoring. Many from diverse backgrounds are starting their own online tutoring businesses on platforms such as [Wyzant](https://www.wyzant.com/). However such sites offer minimal guidance in how to set your rate and, given that, how much demand you might expect on their platforms.
