@@ -12,4 +12,6 @@ In [tutor_nlp](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/b
 In [tutor_rate](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_rate.ipynb) I prototype the model pipelines for generating a weighted kernel density distribution of rate and in [tutor_demand](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_demand.ipynb) I prototype the model pipeline for classifying tutor demand. 
 In [tutor_prediction](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_prediction.ipynb) I build the pipeline for using these models on new test cases. 
 
-The script for generating a functioning front-end for the webapp on Streamlit is contained in `tutor_app.py`.  
+## Front-end
+The script to generate the front-end for the webapp on Streamlit is contained in `tutor_app.py`. 
+Simply run `streamlit run tutor_app.py` in Terminal to launch the app locally. 
