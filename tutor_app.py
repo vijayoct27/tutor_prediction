@@ -129,6 +129,8 @@ def main():
 
 		# Rate
 		if st.checkbox("Rate"):
+			#uncomment to run app locally
+			#rate_data = pd.read_csv('/Users/NewUser/Documents/GitHub/tutor_prediction/tutor_prediction/data/tutor_data_rate.csv').drop(columns='Unnamed: 0')
 			rate_data = pd.read_csv('tutor_data_rate.csv').drop(columns='Unnamed: 0')
 			rate_data_f = rate_data.drop(columns=['rate'])
 			rate_pipe = Pipeline([
@@ -168,7 +170,8 @@ def main():
 			st.markdown('We just need your rate. If you would like more information on this, check the Rate option above.')
 			rate_input = st.number_input("How much would you like to charge ($/hour)", min_value=1.0, max_value=500.0, step = 1.0, value=50.0)
 			if st.button("Estimate your Demand!"):
-			
+				#uncomment to run app locally
+				#demand_data = pd.read_csv('/Users/NewUser/Documents/GitHub/tutor_prediction/tutor_prediction/data/tutor_data_demand.csv').drop(columns='Unnamed: 0')
 				demand_data = pd.read_csv('tutor_data_demand.csv').drop(columns=['Unnamed: 0'])
 				X = demand_data.drop(columns=['hours_per_week_estimate' , 'Label'])
 				y = demand_data.Label
