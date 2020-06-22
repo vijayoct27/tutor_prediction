@@ -12,7 +12,7 @@
 The US tutoring industry is ~ $5 billion and rapidly growing with the rise of online tutoring. Many from diverse backgrounds are starting their own online tutoring businesses on platforms such as [Wyzant](https://www.wyzant.com/). However such sites offer minimal guidance in how to set your rate and, given that, how much demand you might expect on their platforms.
 
 ### Overview
-TutorEdge provies new tutors insight in how much they can charge for their services. User inputs information found in a typical profile (short description, lengthy bio, schedule availability, educational qualifications, and subjects to teach). 
+[TutorEdge](http://sciencepredictor.me) provies new tutors insight in how much they can charge for their services. User inputs information found in a typical profile (short description, lengthy bio, schedule availability, educational qualifications, and subjects to teach). 
 
 The app then generates a kernel density distribution (i.e. a smoothed histogram) for the rates of all tutors in the database, weighted by their similarity to the input. 
 ![Rate prediction](https://github.com/vijayoct27/tutor_prediction/blob/master/notebook/rate.png)
