@@ -155,7 +155,7 @@ def main():
 				
 				plt.plot(rate_ind, rate_kdepdf, label='weighed', color="b")
 				plt.plot(rate_ind, rate_kdepdf_none, label='unweighted', color="r")
-				plt.title('Kernel Density Estimation')
+				plt.title('Your Personalized Rate distribution')
 				plt.ylabel('pdf')
 				plt.legend()
 				plt.xlabel('Rate ($/Hour)')
@@ -181,9 +181,9 @@ def main():
 				demand_data_test = [number_subjects, schedule_input, rate_input, bio_count, num_popular_subjects, number_degrees, desc_count, welcoming_count, passion_count, experience_count]
 				prediction = list(rf.predict(np.array(demand_data_test).reshape(1,-1)))[0]
 				if prediction == 'Low':
-					st.success('It looks like your demand will be on the low end, < 1.5 hours/week')
+					st.success('It looks like your demand will be on the lower end, < 1.5 hours/week')
 				elif prediction == 'High':
-					st.success('It looks like your demand will be on the high side, > 1.5 hours/week')
+					st.success('It looks like your demand will be on the higher end, > 1.5 hours/week')
 				#st.success('Summary of your results')
 
 
