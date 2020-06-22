@@ -13,7 +13,6 @@ The US tutoring industry is ~ $5 billion and rapidly growing with the rise of on
 
 ### Overview
 TutorEdge provies new tutors insight in how much they can charge for their services. User inputs information found in a typical profile (short description, lengthy bio, schedule availability, educational qualifications, and subjects to teach). 
-![Input page](https://github.com/vijayoct27/tutor_prediction/blob/master/notebook/homepage.png)
 
 The app then generates a kernel density distribution (i.e. a smoothed histogram) for the rates of all tutors in the database, weighted by their similarity to the input. 
 ![Rate prediction](https://github.com/vijayoct27/tutor_prediction/blob/master/notebook/rate.png)
