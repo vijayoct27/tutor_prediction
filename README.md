@@ -17,7 +17,9 @@ TutorEdge provies new tutors insight in how much they can charge for their servi
 
 The app then generates a kernel density distribution (i.e. a smoothed histogram) for the rates of all tutors in the database, weighted by their similarity to the input. 
 ![Rate prediction](https://github.com/vijayoct27/tutor_prediction/blob/master/notebook/rate.png)
+
 The user can then input their chosen rate to predict their expected demand on Wyzant's platfrom: the app returns a binary response of either low (<1.5 hours/week) or high demand (> 1.5 hours/week).
+![Demand prediction](https://github.com/vijayoct27/tutor_prediction/blob/master/notebook/demand.png)
 
 ### Approach
 [tutor_cleaning](https://nbviewer.jupyter.org/github/vijayoct27/tutor_prediction/blob/master/tutor_cleaning.ipynb) I scrape and clean ~10k tutor profiles from Wyzant.
