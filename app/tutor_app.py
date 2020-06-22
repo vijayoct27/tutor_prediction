@@ -153,7 +153,7 @@ def main():
 				rate_kdepdf_none = rate_gkde_none.evaluate(rate_ind)
 
 				
-				plt.plot(rate_ind, rate_kdepdf, color="b")
+				plt.plot(rate_ind, rate_kdepdf, color="r")
 				#plt.plot(rate_ind, rate_kdepdf_none, label='unweighted', color="r")
 				plt.title('Your Personalized Rate Distribution')
 				plt.ylabel('pdf')
