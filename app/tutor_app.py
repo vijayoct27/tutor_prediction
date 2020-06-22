@@ -153,13 +153,17 @@ def main():
 				rate_kdepdf_none = rate_gkde_none.evaluate(rate_ind)
 
 				
-				plt.plot(rate_ind, rate_kdepdf, label='Personalized Distribution', color="b")
-				plt.plot(rate_ind, rate_kdepdf_none, label='Full Distribution' color="r")
+				plt.plot(rate_ind, rate_kdepdf, label='Your Personalized Distribution', color="b")
+				plt.plot(rate_ind, rate_kdepdf_none, label='Full Distribution', color="r")
 				#plt.title('Your Personalized Rate Distribution')
-				#plt.ylabel('pdf')
-				plt.legend()
+				plt.ylabel('Probability Density')
+				plt.legend(fancybox=True)
 				plt.xlabel('Rate ($/Hour)')
-
+				ax = plt.subplot(111)    
+				ax.spines["top"].set_visible(False)    
+				#ax.spines["bottom"].set_visible(False)    
+				ax.spines["right"].set_visible(False)    
+				#ax.spines["left"].set_visible(False)
 				st.pyplot()
 
 				#st.success('Summary of your results')
