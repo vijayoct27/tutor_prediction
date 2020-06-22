@@ -160,10 +160,8 @@ def main():
 				plt.legend(fancybox=True)
 				plt.xlabel('Rate ($/Hour)')
 				ax = plt.subplot(111)    
-				ax.spines["top"].set_visible(False)    
-				#ax.spines["bottom"].set_visible(False)    
+				ax.spines["top"].set_visible(False)
 				ax.spines["right"].set_visible(False)    
-				#ax.spines["left"].set_visible(False)
 				st.pyplot()
 
 				#st.success('Summary of your results')
