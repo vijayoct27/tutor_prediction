@@ -144,7 +144,7 @@ def main():
 			weights_rate = (1. / np.linalg.norm(input_rate - rate_trans, axis=-1))
 
 			if st.button("Estimate your Rate!"):
-				st.success('Here is the distribution of rates for profiles already on Wyzant. \n While the full distribution is shown in red, you can get a personalized idea of what to charge by looking at the distribution in blue, which predominantly accounts for those most similar to you.')
+				st.success('Here is the probability distribution of rates for profiles already on Wyzant, personalized to predominantly account for those most similar to you.')
 				rate_gkde = stats.gaussian_kde(rate_data.rate, bw_method = 0.5, weights=weights_rate**4)
 				rate_gkde_none = stats.gaussian_kde(rate_data.rate, bw_method = 0.5, weights=None)
 
@@ -153,8 +153,8 @@ def main():
 				rate_kdepdf_none = rate_gkde_none.evaluate(rate_ind)
 
 				
-				plt.plot(rate_ind, rate_kdepdf, label='Your Personalized Distribution', color="b")
-				plt.plot(rate_ind, rate_kdepdf_none, label='Full Distribution', color="r")
+				plt.plot(rate_ind, rate_kdepdf, color="b")
+				#plt.plot(rate_ind, rate_kdepdf_none, label='Full Distribution', color="r")
 				#plt.title('Your Personalized Rate Distribution')
 				plt.ylabel('Probability Density')
 				plt.legend(fancybox=True)
